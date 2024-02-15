@@ -75,6 +75,8 @@ public class Game : Module
 		Time.FixedStep = true;
 		App.VSync = true;
 		App.Title = GameTitle;
+		App.MouseVisible = false;
+		App.MouseInfiniteMotion = true;
 		Audio.Init();
 
 		scenes.Push(new Startup());
