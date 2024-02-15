@@ -67,6 +67,11 @@ public class Save
 	public bool SpeedrunTimer { get; set; } = false;
 
 	/// <summary>
+	/// 1-10 Mouse sensitivity
+	/// </summary>
+	public int MouseSensitivity { get; set; } = 5;
+
+	/// <summary>
 	/// 0-10 Music volume level
 	/// </summary>
 	public int MusicVolume { get; set; } = 10;
@@ -149,6 +154,12 @@ public class Save
 	public void ToggleTimer()
 	{
 		SpeedrunTimer = !SpeedrunTimer;
+	}
+
+	public void SetMouseSensitivity(int value)
+	{
+		MouseSensitivity = Calc.Clamp(value, 1, 10);
+		SyncSettings();
 	}
 
 	public void SetMusicVolume(int value)
